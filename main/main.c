@@ -11,9 +11,9 @@ void app_main(void)
     while (1)
     {
         gpio_set(LED_PIN);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(2000));
 
         gpio_clear(LED_PIN);
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }

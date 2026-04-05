@@ -1,2 +1,3 @@
-idf_component_register(SRCS "gpio_driver.c" "main.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(SRCS "main.c"
+                    INCLUDE_DIRS "."
+                    REQUIRES gpio_driver)
