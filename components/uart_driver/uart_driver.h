@@ -14,8 +14,5 @@ void uart_ena(uart_config_t *config);
 void uart_write_byte(uint8_t data);
 void uart_write_string(const char *str);
 
-// UART_CONF0_REG
-// UART_CLKDIV_REG
-// UART_STATUS_REG
-// UART_FIFO_REG
+
 #endif

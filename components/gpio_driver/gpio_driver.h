@@ -1,5 +1,5 @@
-#ifndef ESP32_GPIO_DRIVERS_H_
-#define ESP32_GPIO_DRIVERS_H_
+#ifndef ESP32_GPIO_DRIVER_H
+#define ESP32_GPIO_DRIVER_H
 #include <stdint.h>
 
 void gpio_output_ena(uint8_t pin);
