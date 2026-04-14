@@ -36,8 +36,8 @@ void uart_ena(uart_config_t *config) {
     uint32_t reg = REG32(UART_CONF0_REG);
 
     // clear regis first
-    reg &= ~(0x3 << 2);
-    reg &= ~(0x3 << 4);
+    reg &= ~(0x3 << 2); // no of bits
+    reg &= ~(0x3 << 4); // stop bit
     reg &= ~(1 << 1); // disable parity
 
     // setting values
@@ -45,4 +45,21 @@ void uart_ena(uart_config_t *config) {
     reg |= (1 << 4);
 
     REG32(UART_CONF0_REG) = reg;
+}
+
+void uart_write_byte(uint8_t data) {
+    // check if buffer is full
+    // if not, write to FIFO buffer
+
+    // ESP32 UART FIFO size = 128 bytes
+    // shift right 16 to reach the UART_TXFIFO_CNT register
+
+    while ((REG32(UART_STATUS_REG) >> 16 & 0xFF) == 0x80) {
+        //if buffer has 128 bytes, wait
+    }
+
+    // data register, so no need to clear each time, just directly put in byte
+    // directly pushed to queue
+    
+    REG32(UART_FIFO_REG) = data;
 }
