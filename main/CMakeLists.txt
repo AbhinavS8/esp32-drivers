@@ -1,3 +1,3 @@
 idf_component_register(SRCS "main.c"
                     INCLUDE_DIRS "."
-                    REQUIRES gpio_driver)
+                    REQUIRES gpio_driver uart_driver)
